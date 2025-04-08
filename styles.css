@@ -1,0 +1,73 @@
+/* Fond de la page */
+body {
+    background-color: #f7f9fc;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Conteneur principal */
+.stApp {
+    padding: 20px;
+}
+
+/* Style du titre */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Messages utilisateur */
+.user-msg {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border-radius: 20px;
+    margin: 10px 0;
+    max-width: 70%;
+    align-self: flex-end;
+    display: inline-block;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Messages du bot */
+.bot-msg {
+    background-color: #e3f2fd;
+    color: #333;
+    padding: 12px;
+    border-radius: 20px;
+    margin: 10px 0;
+    max-width: 70%;
+    align-self: flex-start;
+    display: inline-block;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation au survol */
+.user-msg:hover, .bot-msg:hover {
+    transform: scale(1.02);
+    transition: 0.2s ease-in-out;
+}
+
+/* Conteneur de la carte */
+.map-container {
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+/* Style du champ d'entrée */
+.stChatInput {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Placeholder du champ d'entrée */
+.stChatInput::placeholder {
+    color: #999;
+}
