@@ -1,4 +1,4 @@
-streamlit
+gradio
 python-dotenv
 langchain-core
 langchain-community
