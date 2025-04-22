@@ -1,5 +1,8 @@
-streamlit
-python-dotenv
+chainlit
+langchain
 langchain-core
 langchain-community
-huggingface-hub
+langchain-groq
+python-dotenv
+fuzzywuzzy
+python-Levenshtein

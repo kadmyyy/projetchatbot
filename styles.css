@@ -1,73 +1,110 @@
-/* Fond de la page */
+/* --- Général --- */
 body {
-    background-color: #f7f9fc;
-    font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Titres */
+h1, h2 {
+    text-align: center;
+    font-weight: 600;
+    color: #1e1e2f;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #4a4a5c;
 }
 
 /* Conteneur principal */
-.stApp {
+.stApp, .gr-chatbot, .chat-container {
+    background-color: white;
+    border-radius: 16px;
     padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    max-width: 800px;
+    margin: auto;
 }
 
-/* Style du titre */
-h1 {
-    text-align: center;
-    color: #2c3e50;
-    font-size: 28px;
-    font-weight: bold;
+/* Messages */
+.message {
+    padding: 12px 16px;
+    border-radius: 18px;
+    margin: 8px 0;
+    max-width: 75%;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1.4;
+    word-wrap: break-word;
+    transition: all 0.3s ease-in-out;
 }
 
-/* Messages utilisateur */
+/* Message utilisateur */
 .user-msg {
     background-color: #007bff;
     color: white;
-    padding: 12px;
-    border-radius: 20px;
-    margin: 10px 0;
-    max-width: 70%;
     align-self: flex-end;
-    display: inline-block;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    border-bottom-right-radius: 4px;
 }
 
-/* Messages du bot */
+/* Message bot */
 .bot-msg {
-    background-color: #e3f2fd;
-    color: #333;
-    padding: 12px;
-    border-radius: 20px;
-    margin: 10px 0;
-    max-width: 70%;
+    background-color: #f1f3f5;
+    color: #2b2b2b;
     align-self: flex-start;
-    display: inline-block;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 4px;
 }
 
-/* Animation au survol */
-.user-msg:hover, .bot-msg:hover {
-    transform: scale(1.02);
-    transition: 0.2s ease-in-out;
-}
-
-/* Conteneur de la carte */
-.map-container {
-    border: 2px solid #007bff;
+/* Input zone */
+input[type="text"], .stChatInput textarea {
+    padding: 12px;
     border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-}
-
-/* Style du champ d'entrée */
-.stChatInput {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 10px;
     border: 1px solid #ccc;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
-/* Placeholder du champ d'entrée */
+/* Placeholder */
 .stChatInput::placeholder {
     color: #999;
+}
+
+/* Bouton */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Carte intégrée (si utilisée) */
+.map-container {
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
 }
