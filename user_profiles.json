@@ -1,0 +1,17 @@
+[
+    {
+      "id": "kany",
+      "name": "Kany",
+      "lang": "fr",
+      "preferences": ["histoire", "lieux culturels"],
+      "budget": "modéré"
+    },
+    {
+      "id": "moussa",
+      "name": "Moussa",
+      "lang": "en",
+      "preferences": ["nature", "plages"],
+      "budget": "élevé"
+    }
+  ]
+  

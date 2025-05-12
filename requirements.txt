@@ -1,4 +1,6 @@
 chainlit
+asyncpg
+aiohttp
 langchain
 langchain-core
 langchain-community
