@@ -8,6 +8,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from fuzzywuzzy import process
 import aiohttp
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 
 # Charger les variables d'environnement
 load_dotenv()
@@ -204,3 +206,20 @@ async def main(message: cl.Message):
     cl.user_session.set("chat_history", chat_history)
 
     await cl.Message(content=response).send()
+
+# FastAPI pour l'API chatbot
+app = FastAPI()
+
+@app.post("/chat")
+async def chat(request: Request):
+    data = await request.json()
+    user_message = data.get("message")
+
+    # Traitement du message utilisateur avec Chainlit
+    response = await cl.Message(content=user_message).send()
+    return JSONResponse(content={"response": response})
+    
+# Lance l'API
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=5000)

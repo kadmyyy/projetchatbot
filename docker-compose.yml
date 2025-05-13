@@ -10,8 +10,8 @@ services:
     depends_on:
       - db
     volumes:
-      - ./app.py:/app/app.py  # Vérifie que ce fichier existe bien
-    command: chainlit run app.py --host 0.0.0.0
+      - ./main.py:/app/main.py  # Assure-toi que ce fichier existe bien
+    command: streamlit run main.py --server.address=0.0.0.0 --server.port=8000  # Commande pour démarrer Streamlit
 
   db:
     image: postgres:15
@@ -21,7 +21,7 @@ services:
       POSTGRES_PASSWORD: ${PG_PASSWORD}
       POSTGRES_DB: ${PG_DATABASE}
     ports:
-      - "5435:5432"
+      - "5436:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 

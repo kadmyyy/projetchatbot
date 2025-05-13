@@ -8,3 +8,4 @@ langchain-groq
 python-dotenv
 fuzzywuzzy
 python-Levenshtein
+streamlit

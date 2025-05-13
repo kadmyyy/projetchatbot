@@ -1,19 +1,19 @@
-# Dockerfile
-
-# Image de base
 FROM python:3.11-slim
 
-# Définir le répertoire de travail
 WORKDIR /app
 
-# Copier les fichiers nécessaires
 COPY . /app
 
-# Installer les dépendances
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# Installation des dépendances
+RUN pip install --upgrade pip \
+    && pip install streamlit chainlit \
+    && pip install -r requirements.txt
 
-# Exposer le port utilisé par Chainlit
-EXPOSE 8000
+# Vérifier que streamlit est installé (ligne temporaire pour debug)
+RUN which streamlit && streamlit --version
 
-# Lancer l'app avec Chainlit
-CMD ["chainlit", "run", "app.py", "-w"]
+# Exposer les ports
+EXPOSE 8501
+
+# Commande de lancement
+CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
